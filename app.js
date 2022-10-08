@@ -31,7 +31,6 @@ btnBuscar.onclick=async function(){
 }
 
 clean.onclick=function(){
-    //listMovies(data.results)
     getMovies()
 }
 
