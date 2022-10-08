@@ -32,6 +32,7 @@ btnBuscar.onclick=async function(){
 
 clean.onclick=function(){
     getMovies()
+    document.getElementsByTagName("input")[0].value = "";
 }
 
 
