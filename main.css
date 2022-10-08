@@ -34,3 +34,30 @@ body{
 .card p {
     margin-bottom: 10px;
 }
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    gap: 1rem;
+  }
+  
+  .search input {
+    padding: 10px;
+    border: 1px solid rgb(50, 14, 207);
+    border-radius: 5px;
+  }
+  
+  .search button {
+    padding: 10px;
+    border: 1px solid rgb(17, 126, 228);
+    border-radius: 5px;
+    background-color: rgb(15, 19, 228);
+    cursor: pointer;
+    color: antiquewhite;
+  }
+
+.search button:hover{
+    opacity: 0.5;
+}

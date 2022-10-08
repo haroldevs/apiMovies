@@ -7,8 +7,10 @@ const options = {
   };
 
 const container=document.querySelector(".container")
-//const inputBuscar=document.querySelector(".input-buscar")
-//const btnBuscar=document.querySelector(".btn-buscar")
+const inputBuscar=document.querySelector(".input-buscar")
+const btnBuscar=document.querySelector(".btn-buscar")
+const clean=document.querySelector(".clean")
+
 
 
 const getMovies=async function(){
@@ -16,8 +18,23 @@ const getMovies=async function(){
     const data= await respuesta.json()
 
     listMovies(data.results)
-    //console.log(data)
+    console.log(data)
 }
+
+btnBuscar.onclick=async function(){
+    const respuesta=await fetch("https://movies-app1.p.rapidapi.com/api/movies",options)
+    const data= await respuesta.json()
+    const texto=inputBuscar.value;
+    const moviesFiltradas= data.results.filter((movie)=>movie.titleOriginal.toLowerCase()===texto.toLowerCase())
+
+    listMovies(moviesFiltradas)
+}
+
+clean.onclick=function(){
+    //listMovies(data.results)
+    getMovies()
+}
+
 
 getMovies()
 
